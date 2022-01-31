@@ -26,7 +26,7 @@ function CartDrawerOverlay() {
                     
                     
 
-                    <div className={styles.cartItem}>
+                    <div className={styles.cartItem} >
     
                         <div style={{backgroundImage:'url(5snek.jpeg)'}} className={styles.cartItemImg}>
 
