@@ -3,6 +3,9 @@ import styles from './style.module.scss';
 import Button from "../../Button";
 
 function CartDrawerOverlay({ onClose, items = [] }) {
+
+   
+
     return(
         <div>
               <div className={styles.overlay}>
@@ -33,7 +36,9 @@ function CartDrawerOverlay({ onClose, items = [] }) {
 
                     </div>
                     
-                    
+                  {
+                      
+                  } 
                     <div className={styles.cartTotalBlock}>
                         <ul>
                       <li >
@@ -47,12 +52,13 @@ function CartDrawerOverlay({ onClose, items = [] }) {
                           <b>1074 руб.</b>
                       </li>
                       </ul>
-
+                      
+                    
                        
                         <Button>Оформить заказ<img className={styles.arrow} src="arrow.svg" alt="arrow"></img></Button>
                     </div>
                   
-
+                     
 
 
                 </div>

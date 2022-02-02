@@ -1,14 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import styles from './style.module.scss';
 import Card from "./Card";
 import SearchInput from "./SearchInput";
+import { useDispatch, useSelector } from 'react-redux';
+import { setItemsInCart, deleteItemFromCart } from "../../redux/cart/reducer";
 
 
 
-function Main() {
+function Main (props){
 
     const[items, setItems] = useState([]);
-    const[cartItems, setCartItems] = useState([]);
+    // const[cartAddItems, setCartAddItems] = useState([]);
+    const dispatch = useDispatch();
+
    
 
 
@@ -24,16 +28,26 @@ function Main() {
          })
     },[])
 
-    const onAddToCard = (obj) => {
-        setCartItems([...cartItems,obj])
-     }
+    // const onAddToCard = (obj) => {
+    //     setCartAddItems([...cartAddItems,obj])
+       
+    //  }
 
-     console.log(cartItems)
+    const onAddToCard = (obj) => {
+        dispatch( setItemsInCart(obj))
+    
+        
+    }
+
+    
      
  
     return(
         <div>
              <div className={styles.content}>
+
+             
+
                 <div className={styles.contentSearch}>
                     <h1 className={styles.titlecontent}>Все кроссовки</h1>
                    
@@ -46,11 +60,13 @@ function Main() {
                     
                     {items.map((item) =>(
                          <Card 
+                         id={item.id}
                        title={item.title}
                        price={item.price}
                        imageUrl={item.imageUrl}
                        onFavorite={() => console.log('Добавили в закладки')}
-                       onPlus={((obj) => onAddToCard(obj))}
+                    //    onPlus={((obj) => onAddToCard(obj))}
+                    onPlus={((obj) => (obj))}
                     /> 
                     ))}
 

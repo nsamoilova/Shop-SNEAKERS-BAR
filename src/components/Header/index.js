@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styles from './style.module.scss';
 import CartDrawerOverlay from "./CartDrawerOverlay";
+import { useSelector } from 'react-redux';
 
-const Header = () => {
+    const Header = () => {
     
-
+   
  const[cardOpen,setCardOpen] = useState(false);
  const[cartItems, setCartItems] = useState([]);
+ const items = useSelector(state => state.cart.itemsInCart);
+//  const totalPrice = items.reduce((acc, cart) => acc += cart.price, 0)
 
  const onClickCard = () => {
      setCardOpen(true)
@@ -37,7 +40,7 @@ const Header = () => {
                          <li className={styles.card} onClick={onClickCard} >
                          <img src="/cart.svg"  className={styles.cardAdd}/>
 
-                             <span>1205 руб.</span>
+                            <span>0 руб.</span> 
                          </li>
                          <li >
                          <img src="/acc.svg" className={styles.acc} />
