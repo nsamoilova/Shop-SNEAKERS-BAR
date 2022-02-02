@@ -18,7 +18,7 @@ function Card({ id,title, imageUrl, price, onFavorite, onPlus }) {
 
     const hadleClick = (e) => {
         e.stopPropagation();
-        dispatch(setItemsInCart({id,title, imageUrl, price}));
+        dispatch(setItemsInCart({id,title, imageUrl, price})) ;
         onPlus({ id,title, imageUrl, price })
         setIsAdd(!isAdd)
     }
