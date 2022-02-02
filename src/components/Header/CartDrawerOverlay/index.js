@@ -2,44 +2,38 @@ import React from "react";
 import styles from './style.module.scss';
 import Button from "../../Button";
 
-function CartDrawerOverlay() {
+function CartDrawerOverlay({ onClose, items = [] }) {
     return(
         <div>
-              <div style={{display: 'none'}} className={styles.overlay}>
+              <div className={styles.overlay}>
                 <div className={styles.drawer}>
-                   <h2 className={styles.titleCart}>Корзина<img src="btn-remove.svg" alt="Remove" className={styles.removeBtn}></img></h2>
+                   <h2 className={styles.titleCart}>Корзина<img src="btn-remove.svg" alt="Remove" 
+                   className={styles.removeBtn} 
+                   onClick={onClose}>
+                    </img></h2>
                    
 
                    <div className={styles.sneakersCart}>
-                              <div className={styles.cartItem}>
+                       {items.map((obj) => (
+                           <div className={styles.cartItem} >
     
-                        <div style={{backgroundImage:'url(sneakers.jpeg)'}} className={styles.cartItemImg}>
-
-                        </div>
-                        <div className={styles.cartText}>
-                            <p>Мужские Кроссовки Nike Air Max 270</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                          <img src="btn-remove.svg" alt="Remove" className={styles.removeBtn}></img>
+                           <div style={{backgroundImage: `url(${obj.imageUrl})`}} className={styles.cartItemImg}>
+   
+                           </div>
+                           <div className={styles.cartText}>
+                               <p>${obj.title}</p>
+                               <b>${obj.price}</b>
+                           </div>
+                             <img src="btn-remove.svg" alt="Remove" className={styles.removeBtn} ></img>
+   
+                      
+                      </div>
+   
+                       ))}       
 
                     </div>
                     
                     
-
-                    <div className={styles.cartItem} >
-    
-                        <div style={{backgroundImage:'url(5snek.jpeg)'}} className={styles.cartItemImg}>
-
-                        </div>
-                        <div className={styles.cartText}>
-                            <p>Мужские Кроссовки Nike Air Max 270</p>
-                            <b>12 999 руб.</b>
-                        </div>
-                          <img src="btn-remove.svg" alt="Remove" className={styles.removeBtn}></img>
-
-                    </div>
-                   </div>
-
                     <div className={styles.cartTotalBlock}>
                         <ul>
                       <li >

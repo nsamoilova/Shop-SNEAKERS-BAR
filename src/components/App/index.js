@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../Header';
 import Main from '../Main';
 
 import styles from './style.module.scss'
-class App extends React.Component {
-    render() {
+const App = () => {
+
+   
+
+  
         return (
             <div className={styles.wrapper}>
               <Header />
@@ -12,7 +15,7 @@ class App extends React.Component {
               
             </div>
         )
-    }
+   
 }
 
 export default App;
