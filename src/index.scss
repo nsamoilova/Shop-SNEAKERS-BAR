@@ -75,6 +75,7 @@ body {
 
     .headerRight{
       display: flex;
+      align-items: center;
    
       .cart{
           margin-right: 30px;
@@ -92,7 +93,7 @@ body {
   
      
   
-      img {
+      .cartImg{
           margin-right: 15px;
           cursor: pointer;
       }
@@ -107,6 +108,13 @@ body {
           
           
       
+  }
+
+  .favorite{
+    width: 18px;
+    height: 18px;
+    margin-right: 20px;
+    cursor: pointer;
   }
   
   .titleHeader{
@@ -182,6 +190,15 @@ body {
   display: flex;
   align-items: center;
   padding-left: 18px;
+  position: relative;
+
+  .clear{
+    position: absolute;
+    right: 0;
+    margin-right: 19px;
+    width: 10px;
+    cursor: pointer;
+  }
   
   input{
       border:none;
@@ -198,6 +215,8 @@ body {
   
   }
 }
+///////////
+
 
 
 
@@ -213,6 +232,7 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .drawer{
@@ -225,6 +245,7 @@ background: #FFFFFF;
 box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
 display: flex;
 flex-direction: column;
+overflow: auto;
 
 .titleCart{
   display: flex;
@@ -254,6 +275,7 @@ h2{
    margin-bottom: 20px;
    overflow: auto;
    margin-bottom: 40px;
+   overflow: hidden;
 
    .cartItemImg{
        height: 70px;
@@ -292,6 +314,8 @@ color: #4a4949;
 .sneakersCart{
    margin-right: 15px;
    flex: 1;
+   overflow: auto;
+   
 }
 
 .removeBtn{
@@ -369,4 +393,58 @@ ul{
  &:active{
   background: darken( #9DD558, 5%);
  }
+}
+
+////////////////////
+
+.cartEmpty{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+
+  .basket{
+    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .backArrow{
+    position: relative;
+    top: 1px;
+    transform: rotate(180deg);
+    margin-right: 15px;
+    transition: transform 0.15 ease-in-out;
+  }
+
+   h2{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 10px;
+   }
+
+   p{
+     font-weight: 400;
+    font-size: 16px;
+    line-height: 24px; 
+    text-align: center; 
+    opacity: 0.4;
+    margin-bottom: 40px;
+    width: 280px;
+   }
+
+   .greenButton{
+     width: 245px;
+
+     &:hover{
+       img{
+         transform: rotate(180deg) translate(3px);
+       }
+       
+     }
+   }
 }

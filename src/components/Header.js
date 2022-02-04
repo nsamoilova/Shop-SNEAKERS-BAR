@@ -15,9 +15,13 @@ const Header = (props) => {
 
                 <ul className="headerRight">
                     <li className="cart" onClick={props.onClickCart}>
-                        <img src="cart.svg" />
+                        <img src="cart.svg" className="cartImg" />
 
-                        <span>0 руб.</span>
+                        <span>1250 руб.</span>
+                    </li>
+
+                    <li>
+                        <img src="favorites.svg" alt="Favorites" className="favorite"/>
                     </li>
                     <li >
                         <img src="/acc.svg" className="acc" />
