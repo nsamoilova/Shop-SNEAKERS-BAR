@@ -29,7 +29,7 @@ const Drawer = ( {onClose, items =[] } ) => {
                       
                       </div>
    
-                       ))}       
+                       )) }  
 
                     </div>
                     
