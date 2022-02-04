@@ -34,7 +34,7 @@ const Drawer = ( {onClose, items =[] } ) => {
                     </div>
                     
                   
-                    <div className="cartTotalBlock" >
+                    <div className="cartTotalBlock"   >
                         <ul>
                       <li >
                           <span>Итого:</span>
