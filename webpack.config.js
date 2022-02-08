@@ -1,5 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const regeneratorRuntime = require("regenerator-runtime");
+
+
 
 
 
@@ -8,15 +11,23 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
+   
+   
+    
   },
+
+  
+ 
+ 
    
   mode: "development",
   plugins: [new MiniCssExtractPlugin()],
   module: {
        rules: [
            {
-               test: /\.js$/,
-               use: ["babel-loader"]
+               test:/\.js$|jsx/,
+               use: ["babel-loader"],
+               
            },
 
            {
@@ -56,20 +67,18 @@ module.exports = {
          },
 
          resolve: {
-           extensions: ['.tsx','.ts', '.js'],
+           extensions: ['.js', '.jsx'],
            alias: {
              components: path.resolve(__dirname, 'src/components'),
-             hoc: path.resolve(__dirname, 'src/HOC'),
              images: path.resolve(__dirname, 'src/images'),
-             videos: path.resolve(__dirname, 'src/videos'),
              pages: path.resolve(__dirname, 'src/pages'),
-             redux_main: path.resolve(__dirname, 'src/redux'),
+             
              
            }
          }
 
           
-
+         
  
 
 

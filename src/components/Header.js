@@ -1,16 +1,20 @@
 import React from "react";
+import { Link  } from "react-router-dom";
 
 const Header = (props) => {
     return (
         <div>
             <header>
+                <Link to="/">
                 <div className="headerLeft">
-                    <img src="/logo.svg" className="logo" />
+                     <img src="/logo.svg" className="logo" />
                     <div >
                         <h3 className="titleHeader">Sneakers Bar</h3>
                         <p className="textHeader">Магазин лучших кроссовок</p>
                     </div>
                 </div>
+                    </Link>
+                   
 
 
                 <ul className="headerRight">
@@ -21,7 +25,10 @@ const Header = (props) => {
                     </li>
 
                     <li>
-                        <img src="favorites.svg" alt="Favorites" className="favorite"/>
+                        <Link to="/favorites">
+                            <img src="favorites.svg" alt="Favorites" className="favorite"/>
+                        </Link>
+                       
                     </li>
                     <li >
                         <img src="/acc.svg" className="acc" />
